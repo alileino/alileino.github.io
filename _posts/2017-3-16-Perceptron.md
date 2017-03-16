@@ -19,7 +19,13 @@ h(x) = \sign(w^Tx)
 \end{equation}
 $$
 
-Clearly for any misclassified pair $x(t), y(t)$, we have $\sign(w^T(t)x(t))=-\sign(y(t))$.
+Clearly for any misclassified pair $x(t), y(t)$, we have 
+
+$$
+\begin{equation}
+\sign(w^T(t)x(t))=-\sign(y(t))
+\label{eq:misclass}
+\end{equation}$$.
 
 
 $$
@@ -32,7 +38,7 @@ Proof: $$
 \begin{align}
 &\sign(y(t)w^T(t)x(t))\\
 &=\sign(y(t))\sign(w^T(t)x(t)) & & & \vert y(t) \textrm{ is misclassified by } w(t)\\
-&=\sign(y(t))(-\sign(y(t))\\
+&\stackrel{\eqref{eq:misclass}}{=}\sign(y(t))(-\sign(y(t))\\
 &=-\sign(y(t))^2\\
 &=-1
 \end{align}
