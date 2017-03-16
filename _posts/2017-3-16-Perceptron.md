@@ -25,6 +25,7 @@ $$
 \begin{equation}
 \sign(w^T(t)x(t))=-\sign(y(t))
 \label{eq:misclass}
+\tag{213}
 \end{equation}$$.
 
 
