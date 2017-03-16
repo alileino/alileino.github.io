@@ -33,7 +33,9 @@ y(t)w^T(t)x(t) < 0
 \end{equation}
 $$
 
-Proof: $$
+Proof:
+
+$$
 \begin{align*}
 &\sign(y(t)w^T(t)x(t))\\
 &=\sign(y(t))\sign(w^T(t)x(t)) & & & \vert y(t) \textrm{ is misclassified by } w(t)\\
@@ -51,10 +53,15 @@ $$
 y(t)w^T(t+1)x(t)>y(t)w^Tx(t)
 \end{equation}
 $$
-Proof: $$ 
+
+__Proof:__ 
+
+$$ 
 \begin{align*}
 &y(t)w^T(t+1)x(t) \\
 &= y(t)(w(t)+y(t)x(t))^Tx(t)\\
 &=y(t)(w^T(t)+x^T(t)y(t))x(t)\\
+&=y(t)w^T(t)x(t)+y(t)^2 x(t)^2\\
+&>y(t)w^T(t)x(t)
 \end{align*}
 $$
