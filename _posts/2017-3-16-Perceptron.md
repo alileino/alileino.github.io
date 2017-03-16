@@ -43,6 +43,8 @@ Proof: $$
 &=-1
 \end{align*}
 $$\ref{eq:misclass}
+\eqref{eq:misclass}
+\eqref{misclass}
 
 $$
 \begin{equation}
