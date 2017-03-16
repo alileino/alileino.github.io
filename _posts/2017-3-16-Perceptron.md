@@ -22,7 +22,12 @@ $$
 Clearly for any misclassified pair $x(t), y(t)$, we have $\sign(w^T(t)x(t))=-\sign(y(t))$.
 
 
-__Corollary 3: __$y(t)w^T(t)x(t) < 0$
+$$
+\begin{equation}
+y(t)w^T(t)x(t) < 0
+\end{equation}
+$$
+
 Proof: $$
 \begin{align}
 &\sign(y(t)w^T(t)x(t))\\
