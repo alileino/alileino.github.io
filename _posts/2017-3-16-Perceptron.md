@@ -42,7 +42,7 @@ Proof: $$
 &=-\sign(y(t))^2\\
 &=-1
 \end{align*}
-$$
+$$\ref{eq:misclass}
 
 $$
 \begin{equation}
