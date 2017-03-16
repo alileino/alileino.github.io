@@ -3,13 +3,21 @@ layout: post
 title: Proofs for the perceptron learning algorithm
 ---
 $$\newcommand{\sign}{\textrm{sign}}$$
+
 Let $t\in\mathbb{N}$ be the time step, $w(t)$ the weight vector at time $t$, and $x(t), y(t)$ any misclassified pair misclassified at time $t$.
 The perceptron learning algorithm learning rule using this notation is:
 
-$$ w(t+1) = w(t) + y(t)x(t)$$ and its classification rule is
-$$\begin{equation}
-h(x) = \sign(w^Tx)
+$$ \begin{equation}
+w(t+1) = w(t) + y(t)x(t)
 \end{equation}$$
+
+and its classification rule is
+
+$$
+\begin{equation}
+h(x) = \sign(w^Tx)
+\end{equation}
+$$
 
 Clearly for any misclassified pair $x(t), y(t)$, we have $\sign(w^T(t)x(t))=-\sign(y(t))$.
 
@@ -25,7 +33,11 @@ Proof: $$
 \end{align}
 $$
 
-$$y(t)w^T(t+1)x(t)>y(t)w^Tx(t)$$
+$$
+\begin{equation}
+y(t)w^T(t+1)x(t)>y(t)w^Tx(t)
+\end{equation}
+$$
 Proof: $$ 
 \begin{align}
 &y(t)w^T(t+1)x(t) \\
