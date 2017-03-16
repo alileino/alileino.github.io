@@ -4,7 +4,7 @@ title: Proofs for the perceptron learning algorithm
 ---
 $$\newcommand{\sign}{\textrm{sign}}$$
 
-Let $t\in\mathbb{N}$ be the time step, $w(t)$ the weight vector at time $t$, and $x(t), y(t)$ any misclassified pair misclassified at time $t$.
+Let $t\in\mathbb{N}$ be the time step, $w(t)\in\mathbb{R}^n$ the weight vector at time $t$, and $(x(t), y(t))$ any misclassified pair misclassified at time $t$.
 The perceptron learning algorithm learning rule using this notation is:
 
 $$ \begin{equation}
@@ -45,8 +45,6 @@ $$
 \end{align*}
 $$
 \ref{misclass}
-\eqref{misclass}
-\eqref{misclass}
 
 $$
 \begin{equation}
@@ -65,3 +63,5 @@ $$
 &>y(t)w^T(t)x(t)
 \end{align*}
 $$
+Where $y(t)^2x(t)^2>0$, since $x$ includes the bias dimension, so it can't be $0$.
+
