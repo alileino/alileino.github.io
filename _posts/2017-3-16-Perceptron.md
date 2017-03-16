@@ -35,13 +35,13 @@ y(t)w^T(t)x(t) < 0
 $$
 
 Proof: $$
-\begin{align}
+\begin{align*}
 &\sign(y(t)w^T(t)x(t))\\
 &=\sign(y(t))\sign(w^T(t)x(t)) & & & \vert y(t) \textrm{ is misclassified by } w(t)\\
-&\stackrel{\eqref{eq:misclass}}{=}\sign(y(t))(-\sign(y(t))\\
+&\stackrel{\ref{eq:misclass}}{=}\sign(y(t))(-\sign(y(t))\\
 &=-\sign(y(t))^2\\
 &=-1
-\end{align}
+\end{align*}
 $$
 
 $$
@@ -50,9 +50,9 @@ y(t)w^T(t+1)x(t)>y(t)w^Tx(t)
 \end{equation}
 $$
 Proof: $$ 
-\begin{align}
+\begin{align*}
 &y(t)w^T(t+1)x(t) \\
 &= y(t)(w(t)+y(t)x(t))^Tx(t)\\
 &=y(t)(w^T(t)+x^T(t)y(t))x(t)\\
-\end{align}
+\end{align*}
 $$
