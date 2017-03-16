@@ -2,7 +2,7 @@
 layout: post
 title: Proofs for the perceptron learning algorithm
 ---
-
+$$\newcommand{\sign}{\textrm{sign}}$$
 Let $t\in\mathbb{N}$ be the time step, $w(t)$ the weight vector at time $t$, and $x(t), y(t)$ any misclassified pair misclassified at time $t$.
 The perceptron learning algorithm learning rule using this notation is:
 
