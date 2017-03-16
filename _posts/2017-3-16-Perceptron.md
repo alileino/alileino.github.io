@@ -22,12 +22,10 @@ $$
 Clearly for any misclassified pair $x(t), y(t)$, we have 
 
 $$
-\begin{equation}
+\begin{equation}\label{misclass} 
 \sign(w^T(t)x(t))=-\sign(y(t))
-\label{eq:misclass}
-\tag{213}
-\end{equation}$$.
-
+\end{equation}
+$$.
 
 $$
 \begin{equation}
@@ -39,12 +37,13 @@ Proof: $$
 \begin{align*}
 &\sign(y(t)w^T(t)x(t))\\
 &=\sign(y(t))\sign(w^T(t)x(t)) & & & \vert y(t) \textrm{ is misclassified by } w(t)\\
-&\stackrel{\ref{eq:misclass}}{=}\sign(y(t))(-\sign(y(t))\\
+&\stackrel{\ref{misclass}}{=}\sign(y(t))(-\sign(y(t))\\
 &=-\sign(y(t))^2\\
 &=-1
 \end{align*}
-$$\ref{eq:misclass}
-\eqref{eq:misclass}
+$$
+\ref{misclass}
+\eqref{misclass}
 \eqref{misclass}
 
 $$
