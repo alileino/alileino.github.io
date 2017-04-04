@@ -2,7 +2,11 @@
 layout: post
 title: Proofs for the perceptron learning algorithm (WIP)
 ---
-$$\newcommand{\sign}{\textrm{sign}}$$
+
+$$\newcommand{\sign}{\textrm{sign}}
+\newcommand{\norm}[1]{\|#1\|}
+$$
+
 # Definitions
 Let $t\in\mathbb{N}$ be the time step, $w(t)\in\mathbb{R}^n$ the weight vector at time $t$, and $(x(t), y(t))$ any misclassified pair misclassified at time $t$.
 The perceptron learning algorithm learning rule using this notation is:
@@ -33,6 +37,7 @@ $$
 $$
 \begin{equation}
 y(t)w^T(t)x(t) < 0
+\label{eq:misclass_lt}
 \end{equation}
 $$
 
@@ -70,7 +75,7 @@ $$
 Where $y(t)^2x(t)^2>0$, since $x$ includes the bias dimension, so it can't be $0$. The main takeaway of equation \eqref{eq:improvement} is that the RHS is guaranteed to be less than 0 because $x(t)$ is misclassified, but the LHS is strictly greater than RHS which means that it may become greater than 0 after the update. If LHS becomes greater than 0, then the point $x(t)$ would be correctly classified by $w(t+1)$. However, equation \eqref{eq:improvement} does not guarantee that $w(t+1)$ correctly classifies $x(t)$, it only guarantees improvement in the value of $w^T(t+1)x(t)$ over $w^T(t)x(t)$ in the direction of $y(t)$.
 
 ## Convergence for linearly separable data
-Assume the design matrix $X=\[x_1,x_2, \dots, x_N\]$ is linearly separable. Let $w^*$ be an optimal set of weights separating the data.
+We assume the design matrix $X=\[x_1,x_2, \dots, x_N\]$ is linearly separable. Let $w^*$ be an optimal set of weights separating the data. For simplicity we assume $w(0)=0$
 
 For all $i, w^* $ 
 correctly classifies $x_i$. Then $y_i=\sign({w^*}^T x_i)$ 
@@ -88,4 +93,57 @@ $$
 \end{align*}
 $$
 
+$$
+\begin{equation}
+w^T(t)w^*=w^T(t-1)w^*+\rho
+\end{equation}
+$$
+
+__Proof:__
+
+$$
+\begin{align*}
+w^T(t)w^* &= w^T(t-1)w^*+\rho\\
+&= (w(t-1)+y(t-1)x(t-1))^Tw^*\\
+&= w^T(t-1)w^*+y(t-1)x^T(t-1)w^*\\
+&= w^T(t-1)w^*+(y(t-1)w^{*T}x(t-1))^T \\
+&\geq w^T(t-1)w^*+\rho \\
+\end{align*}
+$$
+
+$$\begin{equation} w^T(t)w^* \geq t\rho\end{equation}$$
+
+__Proof:__
+
+$w^T(0)w^* =0\rho$ and by the induction hyphothesis we get $w^T(t)w^* \geq w^T(t-1)w^*+\rho \geq (t-1)\rho + \rho = t\rho$
+
+
+$$
+\begin{equation}
+\norm{w(t)}^2 \leq \norm{w(t-1)}^2+\norm{x(t-1)}^2
+\end{equation}
+$$
+
+__Proof:__
+$$
+\begin{align*}
+\norm{w(t)}^2 &= \norm{w(t-1)+y(t-1)x(t-1)}^2 \\
+&=\norm{w(t-1)}^2 + 2y(t-1)w^T(t-1)x(t-1) + \norm{y(t-1)x(t-1)}^2 \\
+&=\norm{w(t-1)}^2 + 2y(t-1)w^T(t-1)x(t-1) + \norm{x(t-1)}^2\\
+&\stackrel{\eqref{eq:misclass_lt}}{\leq} \norm{w(t-1)}^2 + \norm{x(t-1)}^2 
+\end{align*}
+$$
+
+$$
+\begin{equation}
+\norm{w(t)}^2 \leq tR^2 \textrm{, where } R=\max_{1\leq i \leq N} \norm{x_i}
+\label{eq:wt_lt_tr}
+\end{equation}
+$$
+
+__Proof:__
+
+It follows from the definition of $R$ that $R^2 \geq \norm{x_i}^2$ for any $i$. $\norm{w(0)}^2 = 0\cdot R^2$, so the base case holds. Let $t>0$. Then $\norm{w(t)}^2 \leq \norm{w(t-1)}^2 + \norm{x(t-1)}^2 \leq (t-1)R^2 + R^2 = tR^2$.
+
 TBC
+<!-- Try these? http://drz.ac/2013/01/17/latex-theorem-like-environments-for-the-web/ -->
