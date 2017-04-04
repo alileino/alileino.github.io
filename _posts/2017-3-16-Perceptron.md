@@ -111,7 +111,11 @@ w^T(t)w^* &= w^T(t-1)w^*+\rho\\
 \end{align*}
 $$
 
-$$\begin{equation} w^T(t)w^* \geq t\rho\end{equation}$$
+$$
+\begin{equation} w^T(t)w^* \geq t\rho
+\label{eq:bound_on_weight_mul}
+\end{equation}
+$$
 
 __Proof:__
 
@@ -144,6 +148,35 @@ $$
 __Proof:__
 
 It follows from the definition of $R$ that $R^2 \geq \norm{x_i}^2$ for any $i$. $\norm{w(0)}^2 = 0\cdot R^2$, so the base case holds. Let $t>0$. Then $\norm{w(t)}^2 \leq \norm{w(t-1)}^2 + \norm{x(t-1)}^2 \leq (t-1)R^2 + R^2 = tR^2$.
+
+$$
+\begin{equation}
+t \leq \frac{R^2\norm{w^*}^2}{\rho^2}
+\end{equation}
+$$
+
+__Proof:__
+
+$$
+\begin{align*}
+\frac{w^T(t)w^*}{\norm{w(t)}} &\stackrel{\eqref{eq:bound_on_weight_mul}}{\geq}
+\frac{t\rho}{\norm{w(t)}}\\
+&\stackrel{\eqref{eq:wt_lt_tr}}{\geq}
+\frac{t\rho}{\sqrt{t}R} = \frac{\sqrt{t}}{R}
+\end{align*}
+$$
+
+
+$$
+\begin{align*}
+\Rightarrow \sqrt{t} &\leq \frac{w^T(t)w^* R}{\norm{w(t)}\rho}\\
+\Rightarrow t &\leq \frac{(w^Tw^*)(w^Tw^*)R^2}{\norm{w(t)}^2\rho^2}\\
+&= \frac{\norm{w(t)}^2\norm{w^*}^2R^2}{\norm{w(t)}^2\rho^2}\\
+&=\frac{\norm{w^*}^2R^2}{\rho^2}
+\end{align*}
+$$
+
+The last result means that there is an upper bound for $t$ (number of iterations) given a linearly separable data set. One interpretation of this is that if $t$ were larger than the bound, there would be no misclassified examples and the update rule would not apply.
 
 TBC
 <!-- Try these? http://drz.ac/2013/01/17/latex-theorem-like-environments-for-the-web/ -->
