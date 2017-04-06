@@ -1,0 +1,84 @@
+.theorem {
+
+    display: block;
+
+
+
+    font-style: italic;
+
+}
+
+.theorem:before {
+
+    content: "Theorem.";
+
+    font-weight: bold;
+
+    font-style: normal;
+
+}
+
+.result {
+
+    display: block;
+
+    margin: 12px 0;
+    background-color: #EEEEEE;
+    font-style: italic;
+
+}
+
+.result:before {
+
+//    content: "result.";
+
+    font-weight: bold;
+
+    font-style: normal;
+
+}
+
+.proof {
+
+    display: block;
+
+    margin-bottom: 3em;
+
+    font-style: normal;
+
+}
+
+.proof:before {
+
+    content: "Proof.";
+
+    font-style: italic;
+
+}
+
+.proof:after {
+
+    content: "\25FC";
+
+    float:right;
+}
+
+.definition {
+
+    display: block;
+
+    margin: 12px 0;
+
+    font-style: normal;
+
+}
+
+.definition:before {
+
+    content: "Definition.";
+
+    font-weight: bold;
+
+    font-style: normal;
+
+}
